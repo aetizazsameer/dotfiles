@@ -54,6 +54,15 @@ local plugins = {
 	  "folke/which-key.nvim",
   },
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+  },
+  {
     "nvim-telescope/telescope.nvim", 
     tag = "0.1.5",
     dependencies = {
@@ -63,11 +72,6 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate"
-  },
-  {
-    "nyoom-engineering/oxocarbon.nvim",
-    lazy = false,
-    priority = 1000,
   },
   {
     "terrortylor/nvim-comment",
@@ -108,11 +112,7 @@ treesitter.setup({
     enable = true 
   },  
 })
+vim.keymap.set('n', "<C-n>", ":Neotree filesystem reveal right toggle<CR>")
 
----- main colorscheme -----------------------------------------------
+---- colorscheme ----------------------------------------------------
 vim.cmd.colorscheme "tokyonight-night"
----- alt colorscheme ------------------------------------------------
--- vim.opt.background = "dark"
--- vim.cmd.colorscheme "oxocarbon"
--- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
--- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
