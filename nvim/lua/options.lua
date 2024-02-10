@@ -38,3 +38,11 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     vim.opt.cursorline = false
   end,
 })
+-- set ignorecase on startup
+vim.api.nvim_create_autocmd("VimEnter", {
+	group = vim.api.nvim_create_augroup("IgnorecaseOnOpen", { clear = true }),
+	once = true,
+	callback = function()
+		vim.cmd("set ignorecase")
+	end,
+})
