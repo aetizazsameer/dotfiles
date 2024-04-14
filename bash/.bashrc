@@ -62,3 +62,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # Shortcut to neovim and bash config files
 export INITLUA='~/.config/nvim/lua/init.lua'
 export BASHRC='~/.bashrc'
+export GLAZECONFIG='~/.glaze-wm/config.yaml'
+
+# Set editor
+export EDITOR=hx
