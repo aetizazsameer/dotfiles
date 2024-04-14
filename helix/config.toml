@@ -1,0 +1,46 @@
+theme = "theme_transparent"
+
+[editor]
+cursorline = true
+auto-save = true
+shell = ["C:\\Program Files\\Git\\bin\\bash.exe", "-c"]
+idle-timeout = 1
+completion-trigger-len = 1
+completion-replace = true
+true-color = true
+bufferline = "multiple"
+color-modes = true
+
+[editor.statusline]
+left = [
+    "spacer",
+    "version-control",
+    "spacer",
+    "mode",
+    "spinner",
+    "file-name",
+    "file-modification-indicator"
+]
+right = [
+    "diagnostics",
+    "selections",
+    "position",
+    "file-encoding",
+    "file-line-ending",
+    "file-type"
+]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true
