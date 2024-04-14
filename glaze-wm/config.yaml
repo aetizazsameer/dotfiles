@@ -42,7 +42,7 @@ focus_borders:
     color: "#000000"
 
 bar:
-  height: "25px"
+  height: "30px"
   position: "top"
   opacity: 0.9
   background: "#2b2a33"
