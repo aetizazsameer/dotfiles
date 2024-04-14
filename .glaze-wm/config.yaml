@@ -69,6 +69,10 @@ bar:
       focused_workspace_background: "#ffffff33"
       displayed_workspace_background: "#00000033"
       default_workspace_background: "transparent"
+    - type: "music"
+      label_not_playing: " "
+      label_paused: " "
+      label_playing: " "
     - type: "window title"
   components_right:
     - type: "battery"
