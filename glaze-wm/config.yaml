@@ -25,10 +25,10 @@ general:
 
 gaps:
   # Gap between adjacent windows.
-  inner_gap: "7px"
+  inner_gap: "5px"
 
   # Gap between windows and the screen edge.
-  outer_gap: "7px"
+  outer_gap: "9px"
 
 # Highlight active/inactive windows with a colored border.
 # ** Exclusive to Windows 11 due to API limitations.
@@ -68,8 +68,9 @@ bar:
       label_playing: "{song_title}"
       max_title_length: 20
     - type: "workspaces"
-      focused_workspace_background: "#ffffff33"
-      displayed_workspace_background: "#00000033"
+      foreground: "000000"
+      focused_workspace_background: "#ffffff"
+      displayed_workspace_background: "#727272"
       default_workspace_background: "transparent"
     - type: "window title"
   components_right:
@@ -118,6 +119,9 @@ window_rules:
   - command: "resize borders 0px -7px -7px -7px"
     match_process_name: "steam"
 
+  - command: "ignore"
+    match_process_name: "regedit"
+
 binding_modes:
   - name: "resize"
     keybindings:
@@ -157,13 +161,13 @@ keybindings:
 
   # Resize focused window by a percentage or pixel amount.
   - command: "resize width -2%"
-    binding: "Alt+U"
+    bindings: ["Alt+U", "Alt+Shift+U"]
   - command: "resize width +2%"
-    binding: "Alt+P"
+    bindings: ["Alt+P", "Alt+Shift+P"]
   - command: "resize height +2%"
-    binding: "Alt+O"
+    bindings: ["Alt+O", "Alt+Shift+O"]
   - command: "resize height -2%"
-    binding: "Alt+I"
+    bindings: ["Alt+I", "Alt+Shift+I"]
 
   # As an alternative to the resize keybindings above, resize mode enables resizing via
   # HJKL or arrow keys. The binding mode is defined above with the name "resize".
@@ -207,6 +211,9 @@ keybindings:
   - command: "exec wt"
     binding: "Alt+Enter"
 
+  - command: "exec explorer"
+    binding: "Alt+Shift+Enter"
+    
   # Focus the workspace that last had focus.
   - command: "focus workspace recent"
     binding: "Alt+Y"
@@ -238,3 +245,4 @@ keybindings:
     binding: "Alt+Shift+1"
   - commands: ["move to workspace 2", "focus workspace 2"]
     binding: "Alt+Shift+2"
+
