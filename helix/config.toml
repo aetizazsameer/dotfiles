@@ -1,9 +1,11 @@
 theme = "theme_transparent"
 
 [editor]
-cursorline = true
+cursorline = false
 auto-save = true
-shell = ["C:\\Program Files\\Git\\bin\\bash.exe", "-c"]
+auto-format = true
+auto-completion = true
+shell = ["C:/Program Files/Git/bin/bash.exe", "-c"]
 idle-timeout = 1
 completion-trigger-len = 1
 completion-replace = true
@@ -33,7 +35,7 @@ right = [
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
-select = "underline"
+select = "block"
 
 [editor.file-picker]
 hidden = false
@@ -44,3 +46,4 @@ skip-levels = 1
 
 [editor.soft-wrap]
 enable = true
+
