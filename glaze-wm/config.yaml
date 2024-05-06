@@ -232,23 +232,25 @@ keybindings:
 
   # Move focused workspace to a monitor in a given direction.
   - command: "move workspace left"
-    binding: "Alt+A"
+    binding: "Alt+Shift+A"
   - command: "move workspace right"
-    binding: "Alt+F"
+    binding: "Alt+Shift+F"
   - command: "move workspace up"
-    binding: "Alt+D"
+    binding: "Alt+Shift+D"
   - command: "move workspace down"
-    binding: "Alt+S"
+    binding: "Alt+Shift+S"
 
   # More custom keybinds
   - command: "focus workspace prev"
-    binding: "Alt+Shift+A"
+    binding: "Alt+A"
   - command: "exec '%appdata%/Spotify/Spotify.exe'"
-    binding: "Alt+Shift+S"
+    binding: "Alt+S"
   - command: "focus workspace next"
-    binding: "Alt+Shift+D"
+    binding: "Alt+D"
   - command: "exec '%programfiles%/Mozilla Firefox/firefox.exe'"
-    binding: "Alt+Shift+F"
+    binding: "Alt+F"
+  - command: "exec notepad"
+    binding: "Alt+N"
   
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ["move to workspace 1", "focus workspace 1"]
