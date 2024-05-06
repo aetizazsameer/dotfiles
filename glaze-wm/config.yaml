@@ -249,8 +249,11 @@ keybindings:
     binding: "Alt+D"
   - command: "exec '%programfiles%/Mozilla Firefox/firefox.exe'"
     binding: "Alt+F"
-  - command: "exec notepad"
+    
+  - command: "exec '%programfiles%/Mozilla Firefox/private_browsing.exe'"
     binding: "Alt+N"
+  - command: "exec notepad"
+    binding: "Alt+Shift+N"
   
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ["move to workspace 1", "focus workspace 1"]
