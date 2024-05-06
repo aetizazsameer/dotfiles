@@ -44,7 +44,7 @@ focus_borders:
 bar:
   height: "30px"
   position: "top"
-  opacity: 0.9
+  opacity: 0.7
   background: "#2b2a33"
   foreground: "#eeeeee"
   font_family: "Inconsolata"
@@ -68,9 +68,8 @@ bar:
       label_playing: "{song_title}"
       max_title_length: 20
     - type: "workspaces"
-      foreground: "000000"
-      focused_workspace_background: "#ffffff"
-      displayed_workspace_background: "#727272"
+      foreground: "#ffffff"
+      focused_workspace_background: "#636363"
       default_workspace_background: "transparent"
     - type: "window title"
   components_right:
@@ -95,9 +94,8 @@ bar:
     - type: "volume"
 workspaces:
   - name: "1"
-    display_name: "primary"
   - name: "2"
-    display_name: "secondary"
+  - name: "3"
 
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
@@ -229,6 +227,8 @@ keybindings:
     binding: "Alt+1"
   - command: "focus workspace 2"
     binding: "Alt+2"
+  - command: "focus workspace 3"
+    binding: "Alt+3"
 
   # Move focused workspace to a monitor in a given direction.
   - command: "move workspace left"
@@ -240,6 +240,16 @@ keybindings:
   - command: "move workspace down"
     binding: "Alt+S"
 
+  # More custom keybinds
+  - command: "focus workspace prev"
+    binding: "Alt+Shift+A"
+  - command: "exec '%appdata%/Spotify/Spotify.exe'"
+    binding: "Alt+Shift+S"
+  - command: "focus workspace next"
+    binding: "Alt+Shift+D"
+  - command: "exec '%programfiles%/Mozilla Firefox/firefox.exe'"
+    binding: "Alt+Shift+F"
+  
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ["move to workspace 1", "focus workspace 1"]
     binding: "Alt+Shift+1"
