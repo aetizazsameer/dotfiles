@@ -28,7 +28,7 @@ gaps:
   inner_gap: "5px"
 
   # Gap between windows and the screen edge.
-  outer_gap: "9px"
+  outer_gap: "8px"
 
 # Highlight active/inactive windows with a colored border.
 # ** Exclusive to Windows 11 due to API limitations.
@@ -167,95 +167,45 @@ keybindings:
   - command: "resize height -2%"
     bindings: ["Alt+I", "Alt+Shift+I"]
 
-  # As an alternative to the resize keybindings above, resize mode enables resizing via
-  # HJKL or arrow keys. The binding mode is defined above with the name "resize".
-  - command: "binding mode resize"
-    binding: "Alt+R"
-
   # Change tiling direction. This determines where new tiling windows will be inserted.
   - command: "tiling direction toggle"
     binding: "Alt+V"
 
-  # Change focus between floating / tiling windows.
+  # Floating/tiling modes
   - command: "focus mode toggle"
     binding: "Alt+Space"
-
-  # Change the focused window to be floating / tiling.
   - command: "toggle floating"
     binding: "Alt+Shift+Space"
 
-  # Change the focused window to be maximized / unmaximized.
+  # Minimize/maximize/close
   - command: "toggle maximized"
-    bindings: ["Alt+X", "Alt+Shift+M"]
-
-  # Minimize focused window.
+    binding: "Alt+Shift+M"
   - command: "set minimized"
     binding: "Alt+M"
-
-  # Close focused window.
   - command: "close"
-    binding: "Alt+Shift+Q"
+    bindings: ["Alt+Q","Alt+Shift+Q"]
 
-  # Kill GlazeWM process safely.
+  # GlazeWM commands
   - command: "exit wm"
     binding: "Alt+Shift+E"
-
-  # Re-evaluate configuration file.
   - command: "reload config"
     binding: "Alt+Shift+R"
-
-  # Launch CMD terminal (alternatively `exec wt` or `exec %ProgramFiles%/Git/git-bash.exe`
-  # to start Windows Terminal and Git Bash respectively.
-  - command: "exec wt"
-    binding: "Alt+Enter"
-
-  - command: "exec explorer"
-    binding: "Alt+Shift+Enter"
-    
-  # Focus the workspace that last had focus.
-  - command: "focus workspace recent"
-    binding: "Alt+Y"
-
+   
   # Focus the next/previous workspace defined in `workspaces` config.
   - command: "focus workspace next"
     binding: "Alt+T"
   - command: "focus workspace prev"
     binding: "Alt+Shift+T"
 
-  # Change focus to a workspace defined in `workspaces` config.
+  # focus workspace
   - command: "focus workspace 1"
     binding: "Alt+1"
   - command: "focus workspace 2"
     binding: "Alt+2"
   - command: "focus workspace 3"
     binding: "Alt+3"
-
-  # Move focused workspace to a monitor in a given direction.
-  - command: "move workspace left"
-    binding: "Alt+Shift+A"
-  - command: "move workspace right"
-    binding: "Alt+Shift+F"
-  - command: "move workspace up"
-    binding: "Alt+Shift+D"
-  - command: "move workspace down"
-    binding: "Alt+Shift+S"
-
-  # More custom keybinds
-  - command: "focus workspace prev"
-    binding: "Alt+A"
-  - command: "exec '%appdata%/Spotify/Spotify.exe'"
-    binding: "Alt+S"
-  - command: "focus workspace next"
-    binding: "Alt+D"
-  - command: "exec '%programfiles%/Mozilla Firefox/firefox.exe'"
-    binding: "Alt+F"
     
-  - command: "exec '%programfiles%/Mozilla Firefox/private_browsing.exe'"
-    binding: "Alt+N"
-  - command: "exec notepad"
-    binding: "Alt+Shift+N"
-  
-  # Move focused window to a workspace defined in `workspaces` config.
+  # move to workspace
   - commands: ["move to workspace 1", "focus workspace 1"]
     binding: "Alt+Shift+1"
   - commands: ["move to workspace 2", "focus workspace 2"]
@@ -263,3 +213,26 @@ keybindings:
   - commands: ["move to workspace 3", "focus workspace 3"]
     binding: "Alt+Shift+3"
 
+  # Windows execs
+  - command: "exec wt"
+    binding: "Alt+Enter"
+  - command: "exec explorer"
+    binding: "Alt+Shift+Enter"
+  - command: "exec notepad"
+    binding: "Alt+Shift+N"
+  - command: "exec 'Z:/Peripherals + software/software/win/restartexplorer.bat'"
+    binding: "Alt+R"
+      
+  # App execs 
+  - command: "exec '%appdata%/Spotify/Spotify.exe'"
+    binding: "Alt+S"
+  - command: "exec '%programfiles%/Mozilla Firefox/firefox.exe'"
+    binding: "Alt+F"
+  - command: "exec '%programfiles%/Mozilla Firefox/private_browsing.exe'"
+    binding: "Alt+N"
+  - command: "exec '%programfiles(x86)%/Steam/steam.exe'"
+    binding: "Alt+A"
+  - command: "exec '%localappdata%/Discord/Discord'"
+    binding: "Alt+D"
+  - command: "exec '%programfiles(x86)%/ProtonVPN/ProtonVPN.exe'"
+    binding: "Alt+Z"
