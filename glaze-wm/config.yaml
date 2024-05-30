@@ -1,37 +1,16 @@
 general:
-  # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: false
-
-  # Whether to jump the cursor between windows focused by the WM.
   cursor_follows_focus: true
-
-  # Whether to switch back and forth between the previously focused workspace
-  # when focusing the current workspace.
   toggle_workspace_on_refocus: false
-
-  # Whether to show floating windows as always on top.
-  show_floating_on_top: false
-
-  # Amount to move floating windows by (eg. when using `alt+<hjkl>` on a floating window)
+  show_floating_on_top: true
   floating_window_move_amount: "5%"
-
-  # Whether to center new floating windows.
   center_new_floating_windows: true
-
-  # *Strongly* recommended to set to 'false'. Whether to globally enable/disable
-  # window transition animations (on minimize, close, etc). Set to 'unchanged'
-  # to make no setting changes.
   window_animations: false
 
 gaps:
-  # Gap between adjacent windows.
   inner_gap: "5px"
-
-  # Gap between windows and the screen edge.
   outer_gap: "8px"
 
-# Highlight active/inactive windows with a colored border.
-# ** Exclusive to Windows 11 due to API limitations.
 focus_borders:
   active:
     enabled: true
@@ -42,6 +21,7 @@ focus_borders:
     color: "#000000"
 
 bar:
+  enabled: true
   height: "30px"
   position: "top"
   opacity: 0.7
@@ -49,6 +29,7 @@ bar:
   foreground: "#eeeeee"
   font_family: "Inconsolata"
   font_size: "13px"
+  font_weight: 400
   padding: "4px 6px"
   offset_x: 0
   offset_y: 0
@@ -57,8 +38,6 @@ bar:
     label: " "
   components_left:
     - type: "clock"
-      # Documentation on formatting date/time string:
-      # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
       time_formatting: "HH:mm:ss ddd MMM dd" 
     - type: "weather"
   components_center:
@@ -66,7 +45,7 @@ bar:
       label_not_playing: ""
       label_paused: "{song_title}"
       label_playing: "{song_title}"
-      max_title_length: 20
+      max_title_length: 30
     - type: "workspaces"
       foreground: "#ffffff"
       focused_workspace_background: "#636363"
@@ -98,64 +77,50 @@ workspaces:
   - name: "3"
 
 window_rules:
-  # Task Manager requires admin privileges to manage and should be ignored unless running
-  # the WM as admin.
-  - command: "ignore"
-    match_process_name: "/Taskmgr|ScreenClippingHost/"
-
-  # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
+  # Floating system dialogs
   - command: "set floating"
     match_class_name: "#32770"
 
-  # Do not manage picture-in-picture windows for browsers. Note that the default is for
-  # English; change `match_title` to the window's title if you use another language.
+  # Fix Steam borders
+  - command: "resize borders 0px -7px -7px -7px"
+    match_process_name: "steam"
+
+  # Windows ignores
+  - command: "ignore"
+    match_process_name: "/Taskmgr|ScreenClippingHost/"
   - command: "ignore"
     match_title: "[Pp]icture.in.[Pp]icture"
     match_class_name: "Chrome_WidgetWin_1|MozillaDialogClass"
 
-  # Some applications (eg. Steam) have borders that extend past the normal border size.
-  - command: "resize borders 0px -7px -7px -7px"
-    match_process_name: "steam"
-
+  # Custom ignores
   - command: "ignore"
     match_process_name: "regedit"
+  - command: "ignore"
+    match_process_name: "cs2"
 
 binding_modes:
-  - name: "resize"
-    keybindings:
-      # Resize focused window by a percentage or pixel amount.
-      - command: "resize width -2%"
-        bindings: ["H", "Left"]
-      - command: "resize width +2%"
-        bindings: ["L", "Right"]
-      - command: "resize height +2%"
-        bindings: ["K", "Up"]
-      - command: "resize height -2%"
-        bindings: ["J", "Down"]
-      # Press enter/escape to return to default keybindings.
-      - command: "binding mode none"
-        bindings: ["Escape", "Enter"]
-
+  # n/a
+  
 keybindings:
   # Shift focus in a given direction.
   - command: "focus left"
-    bindings: ["Alt+H", "Alt+Left"]
+    binding: "Alt+H"
   - command: "focus right"
-    bindings: ["Alt+L", "Alt+Right"]
+    binding: "Alt+L"
   - command: "focus up"
-    bindings: ["Alt+K", "Alt+Up"]
+    binding: "Alt+K"
   - command: "focus down"
-    bindings: ["Alt+J", "Alt+Down"]
+    binding: "Alt+J"
 
   # Move focused window in a given direction.
   - command: "move left"
-    bindings: ["Alt+Shift+H", "Alt+Shift+Left"]
+    binding: "Alt+Shift+H"
   - command: "move right"
-    bindings: ["Alt+Shift+L", "Alt+Shift+Right"]
+    binding: "Alt+Shift+L"
   - command: "move up"
-    bindings: ["Alt+Shift+K", "Alt+Shift+Up"]
+    binding: "Alt+Shift+K"
   - command: "move down"
-    bindings: ["Alt+Shift+J", "Alt+Shift+Down"]
+    binding: "Alt+Shift+J"
 
   # Resize focused window by a percentage or pixel amount.
   - command: "resize width -2%"
@@ -191,12 +156,6 @@ keybindings:
   - command: "reload config"
     binding: "Alt+Shift+R"
    
-  # Focus the next/previous workspace defined in `workspaces` config.
-  - command: "focus workspace next"
-    binding: "Alt+T"
-  - command: "focus workspace prev"
-    binding: "Alt+Shift+T"
-
   # focus workspace
   - command: "focus workspace 1"
     binding: "Alt+1"
