@@ -15,7 +15,6 @@ focus_borders:
   active:
     enabled: true
     color: "#efefef"
-
   inactive:
     enabled: false
     color: "#000000"
@@ -92,7 +91,7 @@ window_rules:
     match_title: "[Pp]icture.in.[Pp]icture"
     match_class_name: "Chrome_WidgetWin_1|MozillaDialogClass"
 
-  # Custom ignores
+  # App ignores
   - command: "ignore"
     match_process_name: "regedit"
   - command: "ignore"
@@ -102,7 +101,7 @@ binding_modes:
   # n/a
   
 keybindings:
-  # Shift focus in a given direction.
+  # Shift focus
   - command: "focus left"
     binding: "Alt+H"
   - command: "focus right"
@@ -112,7 +111,7 @@ keybindings:
   - command: "focus down"
     binding: "Alt+J"
 
-  # Move focused window in a given direction.
+  # Move focused window
   - command: "move left"
     binding: "Alt+Shift+H"
   - command: "move right"
@@ -122,25 +121,23 @@ keybindings:
   - command: "move down"
     binding: "Alt+Shift+J"
 
-  # Resize focused window by a percentage or pixel amount.
-  - command: "resize width -2%"
-    bindings: ["Alt+U", "Alt+Shift+U"]
-  - command: "resize width +2%"
-    bindings: ["Alt+P", "Alt+Shift+P"]
-  - command: "resize height +2%"
-    bindings: ["Alt+O", "Alt+Shift+O"]
-  - command: "resize height -2%"
-    bindings: ["Alt+I", "Alt+Shift+I"]
-
-  # Change tiling direction. This determines where new tiling windows will be inserted.
-  - command: "tiling direction toggle"
-    binding: "Alt+V"
-
-  # Floating/tiling modes
+  # Resize focused window (% or px)
+  - command: "resize width -5%"
+    binding: "Alt+U"
+  - command: "resize width +5%"
+    binding: "Alt+P"
+  - command: "resize height +5%"
+    binding: "Alt+O"
+  - command: "resize height -5%"
+    binding: "Alt+I"
+    
+  # Tiling
   - command: "focus mode toggle"
     binding: "Alt+Space"
   - command: "toggle floating"
     binding: "Alt+Shift+Space"
+  - command: "tiling direction toggle"
+    binding: "Alt+V"
 
   # Minimize/maximize/close
   - command: "toggle maximized"
@@ -150,13 +147,13 @@ keybindings:
   - command: "close"
     bindings: ["Alt+Q","Alt+Shift+Q"]
 
-  # GlazeWM commands
+  # WM commands
   - command: "exit wm"
     binding: "Alt+Shift+E"
   - command: "reload config"
     binding: "Alt+Shift+R"
    
-  # focus workspace
+  # Focus workspace
   - command: "focus workspace 1"
     binding: "Alt+1"
   - command: "focus workspace 2"
@@ -164,7 +161,7 @@ keybindings:
   - command: "focus workspace 3"
     binding: "Alt+3"
     
-  # move to workspace
+  # Move to workspace
   - commands: ["move to workspace 1", "focus workspace 1"]
     binding: "Alt+Shift+1"
   - commands: ["move to workspace 2", "focus workspace 2"]
