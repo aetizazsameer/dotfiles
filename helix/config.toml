@@ -2,7 +2,7 @@ theme = "theme_transparent"
 
 [editor]
 cursorline = false
-auto-save = true
+auto-save = false
 auto-format = true
 auto-completion = true
 shell = ["C:/Program Files/Git/bin/bash.exe", "-c"]
@@ -12,6 +12,9 @@ completion-replace = true
 true-color = true
 bufferline = "multiple"
 color-modes = true
+rulers = [81]
+mouse = false
+middle-click-paste = false
 
 [editor.statusline]
 left = [
@@ -31,6 +34,9 @@ right = [
     "file-line-ending",
     "file-type"
 ]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -42,8 +48,18 @@ hidden = false
 
 [editor.indent-guides]
 render = true
-skip-levels = 1
+character = "|"
+skip-levels = 0
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
 
 [editor.soft-wrap]
 enable = true
 
+[editor.whitespace]
+render = "all"
+
+[keys.normal]
+C-ret = "insert_newline"
