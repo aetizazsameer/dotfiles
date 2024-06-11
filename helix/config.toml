@@ -1,11 +1,12 @@
+# theme
 theme = "theme_transparent"
 
+# config
 [editor]
 cursorline = false
 auto-save = false
 auto-format = true
 auto-completion = true
-shell = ["C:/Program Files/Git/bin/bash.exe", "-c"]
 idle-timeout = 1
 completion-trigger-len = 1
 completion-replace = true
@@ -16,23 +17,27 @@ rulers = [81]
 mouse = false
 middle-click-paste = false
 
+# shell = ["C:/Program Files/Git/bin/bash.exe", "-c"]
+shell = ["zsh", "-c"]
+
+# display
 [editor.statusline]
 left = [
-    "spacer",
-    "version-control",
-    "spacer",
     "mode",
-    "spinner",
+    "version-control",
+    "workspace-diagnostics",
+]
+center = [
     "file-name",
-    "file-modification-indicator"
+    "read-only-indicator",
+    "file-modification-indicator",
+    "spinner",
 ]
 right = [
-    "diagnostics",
+    "register",
     "selections",
     "position",
-    "file-encoding",
-    "file-line-ending",
-    "file-type"
+    "total-line-numbers",
 ]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
@@ -61,5 +66,11 @@ enable = true
 [editor.whitespace]
 render = "all"
 
+# keybinds
 [keys.normal]
-C-ret = "insert_newline"
+ret = "add_newline_below"
+S-ret = "add_newline_above"
+
+[keys.insert]
+S-ret = "add_newline_above"
+S-tab = "unindent"
