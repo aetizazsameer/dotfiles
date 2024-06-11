@@ -23,6 +23,7 @@ shell = ["zsh", "-c"]
 # display
 [editor.statusline]
 left = [
+    "spacer",
     "mode",
     "version-control",
     "workspace-diagnostics",
@@ -68,9 +69,10 @@ render = "all"
 
 # keybinds
 [keys.normal]
-ret = "add_newline_below"
-S-ret = "add_newline_above"
+ret = "insert_newline"
 
 [keys.insert]
-S-ret = "add_newline_above"
-S-tab = "unindent"
+S-ret = [
+    "add_newline_below",
+    "move_line_down",
+]
