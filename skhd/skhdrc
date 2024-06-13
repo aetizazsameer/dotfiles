@@ -34,3 +34,6 @@ shift + alt - 3 : yabai -m window --space 3;
 # min/max
 shift + alt - m : yabai -m window --toggle zoom-fullscreen
 alt - m : yabai -m window --minimize 
+
+# app exec
+alt - return : osascript -e 'tell application "/Applications/iTerm.app" to create window with default profile'
