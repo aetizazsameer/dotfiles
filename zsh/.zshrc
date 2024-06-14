@@ -7,3 +7,6 @@ alias ls='gls -aF --color=auto --group-directories-first'
 alias ll='ls -l'
 alias vsc=code
 alias srczsh='source ~/.zshrc'
+alias zzz='pmset sleepnow'
+
+setopt hist_ignore_all_dups
