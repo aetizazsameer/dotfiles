@@ -26,6 +26,7 @@ shell = ["zsh", "-c"]
 left = [
     "spacer",
     "mode",
+    "spacer",
     "version-control",
     "workspace-diagnostics",
 ]
