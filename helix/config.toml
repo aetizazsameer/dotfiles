@@ -11,11 +11,12 @@ idle-timeout = 1
 completion-trigger-len = 1
 completion-replace = true
 true-color = true
-bufferline = "multiple"
+bufferline = "never"
 color-modes = true
 rulers = [81]
-mouse = false
+mouse = true
 middle-click-paste = false
+line-number = "absolute"
 
 # shell = ["C:/Program Files/Git/bin/bash.exe", "-c"]
 shell = ["zsh", "-c"]
