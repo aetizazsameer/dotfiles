@@ -3,3 +3,9 @@ name = "java"
 file-types = ["java"]
 comment-tokens = ["//"]
 indent = { tab-width = 4, unit = " " }
+
+[[language]]
+name = "plaintext"
+scope = "source.txt"
+file-types = ["txt"]
+indent = { tab-width = 2, unit = "  " }
