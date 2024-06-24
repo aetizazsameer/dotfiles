@@ -73,6 +73,9 @@ render = "all"
 [keys.normal]
 ret = "insert_newline"
 
+[keys.normal.z]
+f = ":format"
+
 [keys.insert]
 S-ret = [
     "add_newline_below",
