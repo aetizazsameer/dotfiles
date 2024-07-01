@@ -13,18 +13,21 @@ export ZSHRC='~/.zshrc'
 export FF=~/Library/Application\ Support/Firefox/Profiles/default-release/chrome
 
 # set flags
-alias ls='gls -aF --color=auto --group-directories-first'
-alias ll='ls -l'
+alias gls='gls -aF --color --group-directories-first'
+alias ll='gls -l'
+alias ls='if [[ $(gls -1U | wc -l) -gt 12 ]]; then gls; else ll; fi'
 alias diff='/opt/homebrew/bin/diff -u --color'
 alias diffy='/opt/homebrew/bin/diff --expand-tabs --width=$COLUMNS --side-by-side'
 alias tz='tz -m -q'
 alias fzf='fzf --height=50% --info=inline --border --margin=1 --padding=1'
 
 # shortcuts
+alias neo='tz && neofetch'
 alias vsc=code
 alias srczsh='source ~/.zshrc'
 alias zzz='pmset sleepnow'
 alias :q='exit'
 
 setopt hist_ignore_all_dups
-tz && neofetch
+# launch on startup
+neo
