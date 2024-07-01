@@ -22,7 +22,7 @@ alias tz='tz -m -q'
 alias fzf='fzf --height=50% --info=inline --border --margin=1 --padding=1'
 
 # shortcuts
-alias neo='tz && neofetch'
+alias neo='clear && tz && neofetch'
 alias vsc=code
 alias srczsh='source ~/.zshrc'
 alias zzz='pmset sleepnow'
@@ -30,4 +30,4 @@ alias :q='exit'
 
 setopt hist_ignore_all_dups
 # launch on startup
-neo
+tz && neofetch
