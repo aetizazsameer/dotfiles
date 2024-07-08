@@ -10,6 +10,8 @@ NEWLINE=$'\n'
 PS1PREF="<%*, exit %?>"
 PS1PREF="%(?.%F{192}${PS1PREF}%f.%F{168}${PS1PREF}%f)"
 PS1SUF="%F{159}[%n@zmacp]%f %F{221}[%1~]%f%F{231}%(!.#.>)%f"
+# PS1PREF="%(?.%F{green}${PS1PREF}%f.%F{red}${PS1PREF}%f)"
+# PS1SUF="%F{blue}[%n@zcloud]%f %F{yellow}[%1~]%f%F{white}%(!.#.>)%f"
 export PS1=" ${PS1PREF}${NEWLINE}${NEWLINE}${PS1SUF} "
 
 # shortcuts
