@@ -3,7 +3,9 @@ export TERM='xterm-256color'
 export EDITOR='hx'
 export LS_COLORS="$(vivid generate catppuccin-frappe)"
 export TZ_LIST='PST8PDT,Seattle;UTC,Universal'
+export BAT_THEME="TwoDark"
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
+source <(fzf --zsh)
 
 # prompt
 NEWLINE=$'\n'
@@ -25,10 +27,9 @@ alias ls='if [[ $(gls -1U | wc -l) -gt 12 ]]; then gls; else ll; fi'
 alias diff='/opt/homebrew/bin/diff -u --color'
 alias diffy='/opt/homebrew/bin/diff --expand-tabs --width=$COLUMNS --side-by-side'
 alias tz='tz -m -q'
-alias fzf='fzf --height=50% --info=inline --border --margin=1 --padding=1'
+alias fzf='fzf -m --height=50% --info=inline --border --preview="bat --color=always --style="numbers,changes,header" --line-range=:499 {}"'
 
 # shortcuts
-alias neo='clear && tz && neofetch'
 alias vsc=code
 alias srczsh='source ~/.zshrc'
 alias zzz='pmset sleepnow'
@@ -36,4 +37,4 @@ alias :q='exit'
 
 setopt hist_ignore_all_dups
 # launch on startup
-tz && neofetch
+tz
