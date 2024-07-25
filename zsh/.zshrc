@@ -2,9 +2,9 @@
 export TERM='xterm-256color'
 export EDITOR='hx'
 export LS_COLORS="$(vivid generate catppuccin-frappe)"
-export TZ_LIST='PST8PDT,Seattle;UTC,Universal'
+export TZ_LIST='America/Los_Angeles,us-west-2 (PDX);America/New_York,us-east-1 (IAD);UTC,Universal;Asia/Tokyo,ap-northeast-1 (HND)'
 export BAT_THEME="TwoDark"
-export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_COMMAND='rg --files --color=auto'
 source <(fzf --zsh)
 
 # prompt
@@ -30,10 +30,13 @@ alias tz='tz -m -q'
 alias fzf='fzf -m --height=50% --info=inline --border --preview="bat --color=always --style="numbers,changes,header" --line-range=:499 {}"'
 
 # shortcuts
-alias vsc=code
+alias iterm2='open . -a iterm'
 alias srczsh='source ~/.zshrc'
+alias mute='osascript -e "set volume with output muted"'
+alias unmute='osascript -e "set volume without output muted"'
 alias zzz='pmset sleepnow'
 alias :q='exit'
+alias auth='ssh-add'
 
 setopt hist_ignore_all_dups
 # launch on startup
