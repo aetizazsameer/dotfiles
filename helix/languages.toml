@@ -1,9 +1,27 @@
+# toml
+[[language]]
+name = 'toml'
+formatter = { command = "taplo", args = [
+  "fmt", "-",
+]}
+
+# java
 [[language]]
 name = "java"
+scope = "source.java"
+injection-regex = "java"
 file-types = ["java"]
-comment-tokens = ["//"]
 indent = { tab-width = 4, unit = " " }
+language-servers = ["jdtls"]
 
+# ruby
+[[language]]
+name = "ruby"
+scope = "source.rb"
+file-types = ["rb"]
+language-servers = ["solargraph"]
+
+# plaintext
 [[language]]
 name = "plaintext"
 scope = "source.txt"
