@@ -28,7 +28,8 @@ left = [
     "mode",
     "spacer",
     "version-control",
-    "workspace-diagnostics",
+    "spacer",
+    "diagnostics",
 ]
 center = [
     "file-name",
