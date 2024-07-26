@@ -17,8 +17,8 @@ PS1SUF="%F{159}[%n@zmacp]%f %F{221}[%1~]%f%F{231}%(!.#.>)%f"
 export PS1=" ${PS1PREF}${NEWLINE}${NEWLINE}${PS1SUF} "
 
 # shortcuts
-export ZSHRC='~/.zshrc'
-export FF=~/Library/Application\ Support/Firefox/Profiles/default-release/chrome
+export ZSHRC="${HOME}/.zshrc"
+export FF="${HOME}/Library/Application Support/Firefox/Profiles/default-release/chrome"
 
 # set flags
 alias gls='gls -aF --color --group-directories-first'
@@ -30,7 +30,7 @@ alias tz='tz -m -q'
 alias fzf='fzf -m --height=50% --info=inline --border --preview="bat --color=always --style="numbers,changes,header" --line-range=:499 {}"'
 
 # shortcuts
-alias iterm2='open . -a iterm'
+alias iterm='open . -a iterm'
 alias srczsh='source ~/.zshrc'
 alias mute='osascript -e "set volume with output muted"'
 alias unmute='osascript -e "set volume without output muted"'
