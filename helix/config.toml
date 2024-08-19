@@ -76,6 +76,7 @@ ret = "insert_newline"
 
 [keys.normal.z]
 f = ":format"
+c = ":config-open"
 
 [keys.insert]
 S-ret = [
