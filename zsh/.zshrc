@@ -2,7 +2,7 @@
 export TERM='xterm-256color'
 export EDITOR='hx'
 export LS_COLORS="$(vivid generate catppuccin-frappe)"
-export TZ_LIST='America/Los_Angeles,us-west-2 (PDX);America/New_York,us-east-1 (IAD);UTC,Universal;Asia/Tokyo,ap-northeast-1 (HND)'
+export TZ_LIST='America/Los_Angeles,us-west-2 (PDX);America/New_York,us-east-1 (IAD);UTC,Universal;Europe/Dublin,eu-west-1 (DUB);Europe/Madrid,eu-south-2 (ZAZ);Asia/Kolkata,ap-south-1 (DEL);Asia/Tokyo,ap-northeast-1 (HND)'
 export BAT_THEME="TwoDark"
 export FZF_DEFAULT_COMMAND='rg --files --color=auto'
 source <(fzf --zsh)
@@ -18,7 +18,8 @@ export PS1=" ${PS1PREF}${NEWLINE}${NEWLINE}${PS1SUF} "
 
 # shortcuts
 export ZSHRC="${HOME}/.zshrc"
-export FF="${HOME}/Library/Application Support/Firefox/Profiles/default-release/chrome"
+export WP="${HOME}/workplace/"
+export FF="${HOME}/Library/Application Support/Firefox/Profiles/default-release/chrome/"
 
 # set flags
 alias gls='gls -aF --color --group-directories-first'
@@ -32,8 +33,7 @@ alias fzf='fzf -m --height=50% --info=inline --border --preview="bat --color=alw
 # shortcuts
 alias iterm='open . -a iterm'
 alias srczsh='source ~/.zshrc'
-alias mute='osascript -e "set volume with output muted"'
-alias unmute='osascript -e "set volume without output muted"'
+alias mute='osascript -e "set volume without output muted output volume 1 --100%"' # 1% volume
 alias zzz='pmset sleepnow'
 alias :q='exit'
 alias auth='ssh-add'
