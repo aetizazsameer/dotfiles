@@ -1,6 +1,6 @@
 # simple-bar
 osascript -e 'tell application id "tracesOf.Uebersicht" to refresh'
-yabai -m config external_bar main:28:0
+yabai -m config external_bar main:36:0
 
 # layout
 yabai -m config layout bsp
