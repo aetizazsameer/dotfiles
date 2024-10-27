@@ -8,8 +8,8 @@ general:
   window_animations: false
 
 gaps:
-  inner_gap: "5px"
-  outer_gap: "8px"
+  inner_gap: "0px"
+  outer_gap: "0px"
 
 focus_borders:
   active:
@@ -96,6 +96,12 @@ window_rules:
     match_process_name: "regedit"
   - command: "ignore"
     match_process_name: "cs2"
+  - command: "ignore"
+    match_process_name: "ClickShare"
+  - command: "ignore"
+    match_process_name: "PresentSense"
+  - command: "ignore"
+    match_process_name: "clickshare_native"
 
 binding_modes:
   # n/a
@@ -132,10 +138,6 @@ keybindings:
     binding: "Alt+I"
     
   # Tiling
-  - command: "focus mode toggle"
-    binding: "Alt+Space"
-  - command: "toggle floating"
-    binding: "Alt+Shift+Space"
   - command: "tiling direction toggle"
     binding: "Alt+V"
 
@@ -162,11 +164,11 @@ keybindings:
     binding: "Alt+3"
     
   # Move to workspace
-  - commands: ["move to workspace 1", "focus workspace 1"]
+  - command: "move to workspace 1"
     binding: "Alt+Shift+1"
-  - commands: ["move to workspace 2", "focus workspace 2"]
+  - command: "move to workspace 2"
     binding: "Alt+Shift+2"
-  - commands: ["move to workspace 3", "focus workspace 3"]
+  - command: "move to workspace 3"
     binding: "Alt+Shift+3"
 
   # Windows execs
@@ -178,8 +180,10 @@ keybindings:
     binding: "Alt+Shift+N"
   - command: "exec 'Z:/Peripherals + software/software/win/restartexplorer.bat'"
     binding: "Alt+R"
-      
+  
   # App execs 
+  - command: "exec '%localappdata%/Programs/Microsoft VS Code/Code.exe'"
+    binding: "Alt+C"
   - command: "exec '%appdata%/Spotify/Spotify.exe'"
     binding: "Alt+S"
   - command: "exec '%programfiles%/Mozilla Firefox/firefox.exe'"
