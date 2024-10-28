@@ -29,6 +29,7 @@ window_effects:
       enabled: false
     corner_style:
       enabled: false
+      # options: 'square', 'rounded', 'small_rounded'
       style: 'square'
   other_windows:
     border:
@@ -41,6 +42,7 @@ window_effects:
       style: 'square'
 
 window_behavior:
+  # options: 'tiling', 'floating'
   initial_state: 'tiling'
   state_defaults:
     floating:
@@ -166,21 +168,21 @@ keybindings:
     bindings: ['alt+shift+enter']
   - commands: ['shell-exec hx']
     bindings: ["alt+shift+n"]
-  - commands: ["shell-exec 'Z:/Peripherals\ +\ software/software/win/restartexplorer.bat'"]
+  - commands: ["shell-exec Z:/Peripherals\ +\ software/software/win/restartexplorer.bat"]
     bindings: ['alt+r']
 
   # App execs
-  - commands: ["shell-exec '%localappdata%/Programs/Microsoft VS Code/Code.exe'"]
+  - commands: ["shell-exec %localappdata%/Programs/Microsoft VS Code/Code.exe"]
     bindings: ['alt+c']
-  - commands: ["shell-exec '%appdata%/Spotify/Spotify.exe'"]
+  - commands: ["shell-exec %appdata%/Spotify/Spotify.exe"]
     bindings: ['alt+s']
-  - commands: ["shell-exec '%programfiles%/Mozilla Firefox/firefox.exe'"]
+  - commands: ["shell-exec %programfiles%/Mozilla Firefox/firefox.exe"]
     bindings: ['alt+f']
-  - commands: ["shell-exec '%programfiles%/Mozilla Firefox/private_browsing.exe'"]
+  - commands: ["shell-exec %programfiles%/Mozilla Firefox/private_browsing.exe"]
     bindings: ['alt+n']
-  - commands: ["shell-exec '%programfiles(x86)%/Steam/steam.exe'"]
+  - commands: ["shell-exec %programfiles(x86)%/Steam/steam.exe"]
     bindings: ['alt+a']
-  - commands: ["shell-exec '%localappdata%/Discord/Discord.exe'"]
+  - commands: ["shell-exec %localappdata%/Discord/Discord.lnk"]
     bindings: ['alt+d']
-  - commands: ["shell-exec '%programfiles(x86)%/ProtonVPN/ProtonVPN.exe'"]
+  - commands: ["shell-exec %programfiles(x86)%/ProtonVPN/ProtonVPN.exe"]
     bindings: ['alt+z']
