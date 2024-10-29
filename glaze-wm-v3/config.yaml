@@ -1,3 +1,9 @@
+define:
+  gap_size: &GAP_SIZE '0px'
+  bar_height: &BAR_HEIGHT '30px'
+  focused_border_color: &FOCUS_COLOR '#000000'
+  unfocused_border_color: &UNFOCUS_COLOR '#ffffff'
+
 general:
   startup_commands: ['shell-exec zebar']
   shutdown_commands: ['shell-exec taskkill /IM zebar.exe /F']
@@ -13,18 +19,18 @@ general:
 
 gaps:
   scale_with_dpi: true
-  inner_gap: '0px'
+  inner_gap: *GAP_SIZE
   outer_gap:
-    top: '40px'
-    right: '0px'
-    bottom: '0px'
-    left: '0px'
+    top: *BAR_HEIGHT
+    right: *GAP_SIZE
+    bottom: *GAP_SIZE
+    left: *GAP_SIZE
 
 window_effects:
   focused_window:
     border:
       enabled: true
-      color: '#0be007'
+      color: *FOCUS_COLOR
     hide_title_bar:
       enabled: false
     corner_style:
@@ -34,7 +40,7 @@ window_effects:
   other_windows:
     border:
       enabled: true
-      color: '#616161'
+      color: *UNFOCUS_COLOR
     hide_title_bar:
       enabled: false
     corner_style:
@@ -166,6 +172,8 @@ keybindings:
     bindings: ['alt+enter']
   - commands: ['shell-exec explorer']
     bindings: ['alt+shift+enter']
+  - commands: ['shell-exec Taskmgr']
+    bindings: ['alt+t']
   - commands: ['shell-exec hx']
     bindings: ["alt+shift+n"]
   - commands: ["shell-exec Z:/Peripherals\ +\ software/software/win/restartexplorer.bat"]
